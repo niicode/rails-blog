@@ -8,7 +8,6 @@
 /.bundle
 node_modules/
 
-db/
 
 # Ignore all logfiles and tempfiles.
 /log/*
