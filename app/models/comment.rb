@@ -7,4 +7,3 @@ class Comment < ActiveRecord::Base
     post.save
   end
 end
-
