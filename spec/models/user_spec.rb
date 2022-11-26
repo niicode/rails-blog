@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   subject do
     User.new(
-      name: 'Duane',
-      phot: 'https://Duane.com/me.png',
+      name: 'niicode',
+      phot: 'https://niicode.png',
       bio: 'I am Duane David.',
       posts_counter: 0
     )
@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
 
   context 'Return valid data' do
     it 'should accept name' do
-      subject.name = 'Duane'
+      subject.name = 'niicode'
       expect(subject).to be_valid
     end
 
