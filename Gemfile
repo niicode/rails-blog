@@ -8,6 +8,8 @@ gem 'rails', '~> 7.0.4'
 
 gem 'rspec-rails', '~> 4.0.0.beta2'
 
+gem 'rails-controller-testing'
+
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
