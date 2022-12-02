@@ -1,0 +1,11 @@
+<div class="user flex">
+  <img src=<%= user.phot %> alt="Profile picture of <%= user.name%>" />
+  <div class="user-stats flex">
+    <h2><%= user.name %></h2>
+    <small>
+      <a href='/users/<%= user.id %>'>
+        Number of Posts: <%= user.posts_counter%>
+      </a>
+    </small>
+  </div>
+</div>

@@ -1,15 +1,86 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  width: 150px;
+  align-self: center;
+  margin-top: 1rem;
+}
+
+section {
+  margin: 0 auto;
+  max-width: 768px;
+}
+
+.flex {
+  display: flex;
+}
+
+.user {
+  gap: 1rem;
+  width: 100%;
+  max-width: 768px;
+  margin: 1rem auto;
+}
+
+.user img {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  border: 1px solid #ccc;
+}
+
+.user-stats {
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+
+.user-stats h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.user-stats small {
+  margin-left: auto;
+}
+
+.user-info {
+  max-width: 768px;
+  gap: 1rem;
+  margin: 1rem auto;
+  flex-direction: column;
+}
+
+.bio {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .user {
+    gap: 3rem;
+  }
+
+  .user img {
+    max-width: 300px;
+    height: 250px;
+  }
+}

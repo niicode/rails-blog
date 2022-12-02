@@ -1,1 +1,11 @@
-<h2>Posts for all users</h2>
+<section >
+  <%= render'shared/user', user: @user %>
+    <% @posts.each do |post| %>
+      <a href="/users/<%= @user.id %>/posts/<%= post.id %>">
+        <ul>
+          <%= render 'shared/post', post: post %>
+        </ul>
+      </a>
+    <% end %>
+  <button type='button'>Pagination</button>
+</section>

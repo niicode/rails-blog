@@ -1,1 +1,19 @@
-<h2>Here is a list of users</h2>
+<div class="user-info flex">
+  <%= render 'shared/user', user: @user %>
+
+  <div class='bio'>
+    <p><%= @user.bio %></p>
+  </div>
+
+  <div class='card'>
+      <% @user.three_recent_posts.each do |post| %>
+        <a href="/users/<%= @user.id %>/posts/<%= post.id %> ">
+          <%= render 'shared/post', post: post %>
+        </a>
+      <% end %>
+  </div>
+
+  <button>
+    <%= link_to "See all posts", user_posts_path(user_id: @user.id)%>
+  </button>
+</div>
