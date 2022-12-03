@@ -3,7 +3,7 @@ class Comment < ActiveRecord::Base
   belongs_to :user
 
   def update_comment_counter
-    post.comment_count += 1
+    post.comments_count += 1
     post.save
   end
 end
