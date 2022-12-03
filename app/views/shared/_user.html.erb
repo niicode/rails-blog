@@ -1,11 +1,10 @@
-<div class="user flex">
-  <img src=<%= user.phot %> alt="Profile picture of <%= user.name%>" />
-  <div class="user-stats flex">
-    <h2><%= user.name %></h2>
-    <small>
-      <a href='/users/<%= user.id %>'>
-        Number of Posts: <%= user.posts_counter%>
-      </a>
-    </small>
-  </div>
+<div class="user-card-shared">
+    <div class="user-card-img">
+      <img src="<%= user.phot %>" alt="user avatar">
+    </div>
+    <div>
+      <h2><%= user.name %></h2>
+      <h4>Number of posts: <%= user.posts_counter %></h4>
+    </div>
 </div>
+

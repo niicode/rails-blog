@@ -1,13 +1,18 @@
-<h1> show post for a given user</h1>
+<section >
+<div class="post-wrapper">
 <div>
-  <div>
-    <h3> <%=@post.title%> by <%= @user.name%> </h3>
-    <p> <%= @post.text%> </p>
-    <p> Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %> </p>
-  </div>
-  <div>
-    <% @post.recent_five_comments.each do |comment| %>
-      <p> <%= comment.user.name%>: <%= comment.text%><p>
-    <% end %>
-  </div>
+  <span> <%= @post.title %> By  <%= @post.user.name %> </span>
+  <span>
+    Comments: <%= @post.comments_counter %> , Likes: <%= @post.likes_counter %>
+  </span>
 </div>
+<p><%= @post.text %></p>
+</div>
+  <ul class="comments-list">
+      <% if @post.comments_counter > 0 %>
+          <%= render 'shared/comments', comments: @post.comments %>
+      <% else %>
+        <li>No comments</li>
+      <% end %>
+  </ul>
+</section>

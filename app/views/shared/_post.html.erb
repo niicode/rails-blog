@@ -1,20 +1,8 @@
 <li>
-  <div>
-    <h3> <% post.title %> </h3>
-    <p> <%= truncate(post.text, :length => 150) %> </p>
-  </div>
-
-  <div>
-    <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
-  </div>
-
+      <h4><%= post.title %></h4>
+      <p><%= post.text.first(150) %>...</p>
+      <span>
+       Comments: <%= post.comments_counter %> ,
+       Likes: <%= post.likes_counter %>
+      </span>
 </li>
-
-<ul>
-  <% post.last_five_comments.each do |comment| %>
-    <li>
-      <span><%= comment.user.name %></span>
-      <span><%= comment.text %></span>
-    </li>
-  <% end %>
-</ul>

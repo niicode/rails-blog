@@ -1,19 +1,22 @@
-<div class="user-info flex">
-  <%= render 'shared/user', user: @user %>
-
-  <div class='bio'>
-    <p><%= @user.bio %></p>
+<section>
+  <%= render 'shared/user', user:@user %>
+  <div class="bio-heading">
+    <h4>Bio:</h4>
+    <p><%= @user.bio %><p>
   </div>
-
-  <div class='card'>
-      <% @user.three_recent_posts.each do |post| %>
-        <a href="/users/<%= @user.id %>/posts/<%= post.id %> ">
-          <%= render 'shared/post', post: post %>
-        </a>
-      <% end %>
+  <ul class="list">
+    <% if @user.posts.count > 0 %>
+    <% @user.three_recent_posts.each do |post| %>
+      <a href="/users/<%= @user.id %>/posts/<%= post.id %>" >
+        <%= render 'shared/post', post: post %>
+      </a>
+    <% end %>
+  <% else %>
+    <li>No Posts</li>
+  <% end %>
+</ul>
+  <div class="btn">
+  <a href="/users/<%= @user.id %>/posts"><button type="button">See All Posts</button></a>
   </div>
+</section>
 
-  <button>
-    <%= link_to "See all posts", user_posts_path(user_id: @user.id)%>
-  </button>
-</div>
