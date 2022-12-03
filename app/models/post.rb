@@ -9,10 +9,8 @@ class Post < ActiveRecord::Base
   validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  def update_post_count(user_name)
-    user = User.find_by(name: user_name)
-    user.post_count += 1
-    user.save
+  def update_post_count
+    user.update(posts_counter: user.posts.count)
   end
 
   def last_five_comments

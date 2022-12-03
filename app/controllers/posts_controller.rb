@@ -1,28 +1,33 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = Post.where(user_id: params[@user.id])
     @posts = @user.posts
   end
 
   def show
-    @posts = Post.find(params[:id])
     @user = User.find(params[:user_id])
-    @post = @user.posts.find(params[:id])
+    @post = @user.posts.find(params[:user_id])
   end
 
   def new
-    @post = Post.new
+    @user = User.find(params[:user_id])
+    @post = @user.posts.new
+    render :new, locals: { post: @post }
   end
 
   def create
-    @post = current_user.posts.new(post_params)
+    @user = User.find(params[:user_id])
+    @post = @user.posts.new(post_params)
+    @post.comments_counter = 0
+    @post.likes_counter = 0
     respond_to do |format|
       format.html do
         if @post.save
-          redirect_to "/users/#{@post.user.id}/posts/#{@post.id}"
+          flash[:success] = 'Post created successfully'
+          redirect_to user_posts_path(@user)
         else
-          render :new
+          flash[:error] = 'Post not created'
+          render :new, locals: { post: @post }
         end
       end
     end
@@ -31,6 +36,9 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :text, :likes_counter, :comments_counter)
+    params.require(:new_post).permit(:title, :text)
   end
 end
+
+
+
