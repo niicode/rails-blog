@@ -1,0 +1,16 @@
+<div class="forms">
+  <h1>Create a Post </h1>
+  <%= form_with model: Post, url: user_posts_path, class:"post-form", method: :post do |form| %>
+      <div class= "mb-3 col-md-6"><%= form.hidden_field :comments_counter, value:0 %></div>
+      <div class= "mb-3 col-md-6"><%= form.hidden_field :likes_counter, value:0 %></div>
+      <div  class= "mb-3 col-md-6" >
+        <%= form.label :title,"Title", class:'label' %>
+        <%= form.text_field :title, placeholder: 'Title of the post', class:"form-control" %>
+      </div>
+      <div  class= "mb-3 col-md-6">
+        <%= form.label :text, "Content", class:'label' %>
+        <%= form.text_area :text, placeholder: 'Write your post', class:"form-control" %>
+      </div>
+      <div  class= "mb-3"><%= form.submit "Submit Post", class:"btn btn-primary", id:"post-btn" %></div>
+  <% end %>
+</div>

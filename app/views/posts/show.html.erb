@@ -6,7 +6,9 @@
     Comments: <%= @post.comments_counter %> , Likes: <%= @post.likes_counter %>
   </span>
 </div>
-<p><%= @post.text %></p>
+ <p><%= @post.text %></p>
+  <div class="post-btns">
+  <%= render'shared/new_like', post: @post %>
 </div>
   <ul class="comments-list">
       <% if @post.comments_counter > 0 %>
@@ -14,5 +16,6 @@
       <% else %>
         <li>No comments</li>
       <% end %>
+      <%= render 'shared/new_comment', post: @post%>
   </ul>
 </section>

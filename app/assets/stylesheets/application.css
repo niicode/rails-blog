@@ -142,3 +142,21 @@ button {
   font-size: 13px;
   font-weight: 700;
 }
+
+.forms {
+  margin-left: 5rem;
+}
+
+.link-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.create-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
