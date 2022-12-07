@@ -59,11 +59,11 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 
   gem 'rspec-rails'
-   gem "database_cleaner"
-    gem 'capybara'
-    gem 'capybara-screenshot'
-    gem 'webdrivers'
-    gem 'selenium-webdriver'
+  gem "database_cleaner"
+  gem 'capybara'
+  gem 'capybara-screenshot'
+  gem 'webdrivers'
+  gem 'selenium-webdriver'
 end
 
 group :development do
@@ -79,7 +79,6 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-#   gem 'selenium-webdriver'
-
+  #   gem 'selenium-webdriver'
 end
 gem 'bullet', group: 'development'
