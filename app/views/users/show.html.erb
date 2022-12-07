@@ -7,16 +7,14 @@
   <ul class="list">
     <% if @user.posts.count > 0 %>
     <% @user.three_recent_posts.each do |post| %>
-      <a href="/users/<%= @user.id %>/posts/<%= post.id %>" >
         <%= render 'shared/post', post: post %>
-      </a>
     <% end %>
   <% else %>
     <li>No Posts</li>
   <% end %>
 </ul>
   <div class="btn">
-  <a href="/users/<%= @user.id %>/posts"><button type="button">See All Posts</button></a>
+  <a href="/users/<%= @user.id %>/posts">See All Posts</a>
   </div>
 </section>
 
