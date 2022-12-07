@@ -22,7 +22,8 @@ RSpec.describe 'User Index Page', type: :system do
     end
     it "I can see the user's first 3 posts." do
       Post.create([{ user: subject, title: 'First Post', text: 'My first post' },
-                   { user: subject, title: 'Second Post', text: 'My Second post' }, { user: subject, title: 'Third Post', text: 'My Third post' }])
+                   { user: subject, title: 'Second Post', text: 'My Second post' },
+                   { user: subject, title: 'Third Post', text: 'My Third post' }])
       visit user_path(subject.id)
       page.has_content?(subject.posts)
     end
