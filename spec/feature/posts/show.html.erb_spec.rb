@@ -40,3 +40,4 @@ RSpec.feature 'Test Post show', type: :system do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

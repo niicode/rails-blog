@@ -53,3 +53,4 @@ RSpec.feature 'Post Index Page', type: :system do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
