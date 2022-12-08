@@ -5,4 +5,6 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create destroy]
     resources :likes, only: [:create]
   end
+
+  root 'users#index'
 end
