@@ -1,5 +1,4 @@
 require 'rails_helper'
-# rubocop:disable Metrics/BlockLength
 RSpec.feature 'Test Post show', type: :system do
   user = User.create(name: 'John', posts_counter: 30, phot: 'https://randomuser.me/api/portraits/men/70.jpg',
                      bio: 'Teacher from Poland.')
@@ -40,4 +39,3 @@ RSpec.feature 'Test Post show', type: :system do
     end
   end
 end
-# rubocop:enable Metrics/BlockLength
